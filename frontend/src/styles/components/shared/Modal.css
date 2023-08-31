@@ -1,0 +1,25 @@
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.768);
+  z-index: 99;
+}
+
+.modal_content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-primary);
+  box-shadow: 0 1px 2px var(--shadow-1);
+  border-radius: 10px;
+  padding: 15px;
+  padding-bottom: 1rem;
+  max-height: 90vh;
+  max-width: 90vw;
+  height: fit-content;
+  color: var(--color-primary);
+}

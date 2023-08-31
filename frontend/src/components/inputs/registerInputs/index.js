@@ -1,11 +1,12 @@
 //Style imports
 import "../../../styles/components/inputs/loginInputs/loginInput.css";
+import "../../../styles/components/inputs/registerInputs/registerInput.css";
 
 //Libraries imports
 import { ErrorMessage, useField } from "formik";
 import { useMediaQuery } from "react-responsive";
 
-function LoginInput({ bottom, placeholder, ...props }) {
+function RegisterInput({ bottom, placeholder, ...props }) {
 	//States declaration
 	const [field, meta] = useField(props);
 
@@ -15,22 +16,7 @@ function LoginInput({ bottom, placeholder, ...props }) {
 	});
 
 	return (
-		<div className="input_wrap">
-			{meta.touched && meta.error && !bottom && (
-				<div
-					className={
-						desktopView ? "input_error input_error_desktop" : "input_error"
-					}
-					style={{ transform: "translateY(3px)" }}>
-					{meta.touched && meta.error && <ErrorMessage name={field.name} />}
-					{meta.touched && meta.error && (
-						<div
-							className={
-								desktopView ? "error_arrow_right" : "error_arrow_top"
-							}></div>
-					)}
-				</div>
-			)}
+		<div className="input_wrap register_input_wrap">
 			<input
 				className={meta.touched && meta.error ? "input_error_border" : ""}
 				name={field.name}
@@ -39,7 +25,7 @@ function LoginInput({ bottom, placeholder, ...props }) {
 				{...field}
 				{...props}
 			/>
-			{meta.touched && meta.error && bottom && (
+			{meta.touched && meta.error && (
 				<div
 					className={
 						desktopView ? "input_error input_error_desktop" : "input_error"
@@ -63,4 +49,4 @@ function LoginInput({ bottom, placeholder, ...props }) {
 	);
 }
 
-export default LoginInput;
+export default RegisterInput;
